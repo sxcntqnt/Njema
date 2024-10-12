@@ -71,5 +71,8 @@ jobs:
 
       # If required, use the Cloud Run URL output in later steps
       - name: 'Show output'
-        run: |-
-          echo ${{ steps.deploy.outputs.url }}
+        run: |
+        openssl enc -aes-256-cbc -d -pass pass:${{ secrets.sheet_password }} -in client_secrets.enc -out client_secrets.json
+        query_balance.py ${{ secrets.USERNAME }} ${{ secrets.PASSWORD }} --update-spreadsheet ./client_secrets.json
+        rm ./client_secrets.json
+      if: github.ref == 'refs/heads/master'
