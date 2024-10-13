@@ -1,0 +1,177 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "njema"
+version = "0.0.1"  # Specify the project version
+description = "A library for keeping track of your bad investments (stonks)."
+authors = [
+    {name = "Sxcntqnt", email = "getinada@gmail.com"}
+]
+license = {text = "BSD-2-Clause"}
+classifiers = [
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+keywords = ["stonks", "portfolio", "investments"]
+
+dependencies = [
+    "gspread>=3.0.0",
+    "oauth2client",
+    "loguru",
+    "selenium",
+    "aenum",
+    "njema",
+    "psutil"
+]
+requires-python = ">=3.6"
+readme = "README.md"
+
+[project.optional-dependencies]
+dev = ["pytest", "black"]
+
+[project.urls]
+homepage = "https://github.com/sxcntqnt/Njema"
+
+[project.scripts]
+njema = "Njema:main_cli" 
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*"]
+
+[tool.setuptools.package-data]
+"*" = ["*"]
+
+[tool.setuptools]
+zip-safe = false
+
+[tool.setuptools.data-files]
+# Betting client scripts
+"betClient" = [
+    "betClient/betClient_1xbet.py",
+    "betClient/betClient_22bet.py",
+    "betClient/betClient_bangbet.py",
+    "betClient/betClient_betafriq.py",
+    "betClient/betClient_betbureau.py",
+    "betClient/betClient_betflame.py",
+    "betClient/betClient_betgr8.py",
+    "betClient/betClient_betking.py",
+    "betClient/betClient_betkwiff.py",
+    "betClient/betClient_betnare.py",
+    "betClient/betClient_betpawa.py",
+    "betClient/betClient_betsafe.py",
+    "betClient/betClient_bolyesports.py",
+    "betClient/betClient_bongobongo.py",
+    "betClient/betClient_captainsbet.py",
+    "betClient/betClient_chezacash.py",
+    "betClient/betClient_dafabet.py",
+    "betClient/betClient_dimbakenya.py",
+    "betClient/betClient_flamingobets.py",
+    "betClient/betClient_gameguys.py",
+    "betClient/betClient_geniusbet.py",
+    "betClient/betClient_helabet.py",
+    "betClient/betClient_inbetkenya.py",
+    "betClient/betClient_ibet.py",
+    "betClient/betClient_jambobet.py",
+    "betClient/betClient_jantabets.py",
+    "betClient/betClient_kwachua.py",
+    "betClient/betClient_kwikbet.py",
+    "betClient/betClient_ligibet.py",
+    "betClient/betClient_mcheza.py",
+    "betClient/betClient_melbet.py",
+    "betClient/betClient_mojabet.py",
+    "betClient/betClient_mossbets.py",
+    "betClient/betClient_oddibet.py",
+    "betClient/betClient_palmsbet.py",
+    "betClient/betClient_parimatch.py",
+    "betClient/betClient_pepetabet.py",
+    "betClient/betClient_pitch90bet.py",
+    "betClient/betClient_pinnacle.py",
+    "betClient/betClient_playbet.py",
+    "betClient/betClient_playmaster.py",
+    "betClient/betClient_saharagames.py",
+    "betClient/betClient_scorepesa.py",
+    "betClient/betClient_sokabet.py",
+    "betClient/betClient_sportika.py",
+    "betClient/betClient_sportpesa.py",
+    "betClient/betClient_sportybet.py",
+    "betClient/betClient_starbet.py",
+    "betClient/betClient_strikebet.py",
+    "betClient/betClient_tickbet.py",
+    "betClient/betClient_ultrabet.py",
+    "betClient/betClient_worldsportbetting.py",
+    "betClient/betClient_betwinner.py"
+]
+# Forex client scripts
+"forexClient" = [
+    "forexClient/fxClient_deriv.py",
+]
+
+# CCXT client scripts
+"ccxtClient" = [
+    "ccxtClient/betClient_1xbet.py",
+    "ccxtClient/betClient_betnare.py",
+    "ccxtClient/betClient_dimbakenya.py",
+    "ccxtClient/betClient_kenyacharity.py",
+    "ccxtClient/betClient_parimatch.py",
+    "ccxtClient/betClient_solbet.py",
+    "ccxtClient/betClient_22bet.py",
+    "ccxtClient/betClient_betpawa.py",
+    "ccxtClient/betClient_flamingobets.py",
+    "ccxtClient/betClient_kilibet.py",
+    "ccxtClient/betClient_pepetabet.py",
+    "ccxtClient/betClient_sportika.py",
+    "ccxtClient/betClient_888starz.py",
+    "ccxtClient/betClient_betrunner.py",
+    "ccxtClient/betClient_forzza.py",
+    "ccxtClient/betClient_kwachua.py",
+    "ccxtClient/betClient_pesaland.py",
+    "ccxtClient/betClient_sportpesa.py",
+    "ccxtClient/betClient_bangbet.py",
+    "ccxtClient/betClient_betsafe.py",
+    "ccxtClient/betClient_gameguys.py",
+    "ccxtClient/betClient_kwikbet.py",
+    "ccxtClient/betClient_pinnacle.py",
+    "ccxtClient/betClient_sportybet.py",
+    "ccxtClient/betClient_betafriq.py",
+    "ccxtClient/betClient_betway.py",
+    "ccxtClient/betClient_geniusbet.py",
+    "ccxtClient/betClient_ligibet.py",
+    "ccxtClient/betClient_pitch90bet.py",
+    "ccxtClient/betClient_starbet.py",
+    "ccxtClient/betClient_betbureau.py",
+    "ccxtClient/betClient_betwinner.py",
+    "ccxtClient/betClient_helabet.py",
+    "ccxtClient/betClient_mcheza.py",
+    "ccxtClient/betClient_playbet.py",
+    "ccxtClient/betClient_strikebet.py",
+    "ccxtClient/betClient_betflame.py",
+    "ccxtClient/betClient_bolyesports.py",
+    "ccxtClient/betClient_hollywoodbets.py",
+    "ccxtClient/betClient_melbet.py",
+    "ccxtClient/betClient_playmaster.py",
+    "ccxtClient/betClient_tickbet.py",
+    "ccxtClient/betClient_betgr8.py",
+    "ccxtClient/betClient_bongobongo.py",
+    "ccxtClient/betClient_ibet.py",
+    "ccxtClient/betClient_mojabet.py",
+    "ccxtClient/betClient_ultrabet.py",
+    "ccxtClient/betClient_betika.py",
+    "ccxtClient/betClient_captainsbet.py",
+    "ccxtClient/betClient_inbetkenya.py",
+    "ccxtClient/betClient_mossbets.py",
+    "ccxtClient/betClient_saharagames.py",
+    "ccxtClient/betClient_worldsportbetting.py",
+    "ccxtClient/betClient_betking.py",
+    "ccxtClient/betClient_chezacash.py",
+    "ccxtClient/betClient_instabets.py",
+    "ccxtClient/betClient_melbet.py",
+    "ccxtClient/betClient_scorepesa.py",
+    "ccxtClient/betClient_saharagames.py",
+    "ccxtClient/betClient_jambobet.py",
+    "ccxtClient/betClient_oddibet.py",
+    "ccxtClient/betClient_shabiki.py"
+]
