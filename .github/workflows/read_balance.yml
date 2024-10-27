@@ -30,14 +30,12 @@ jobs:
     - name: Install the repository
       run: |
         pip install .
- 
-   - name: Read the current date
+    - name: Read the current date
       run: |
         njema date
- 
-    - name: Read the current time
+     - name: Read the current time
       run: |
-        njema time 
+        njema time
       run: |
         njema.py ${{ secrets.USERNAME }} ${{ secrets.PASSWORD }}
       if: github.ref != 'refs/heads/master'
