@@ -1,4 +1,4 @@
-name: Mind Your Stonks
+name: Njema Workflow Life
 
 on: [push, pull_request]
 #on:
