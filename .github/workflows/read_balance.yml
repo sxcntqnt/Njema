@@ -9,10 +9,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Set up Python 3.6
+    - name: Set up Python 3.10
       uses: actions/setup-python@v1
       with:
-        python-version: 3.6
+        python-version: 3.10
     - name: Install the dependencies
       run: |
         wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz
@@ -30,7 +30,14 @@ jobs:
     - name: Install the repository
       run: |
         pip install .
-    - name: Read the account balance
+ 
+   - name: Read the current date
       run: |
-        query_balance.py ${{ secrets.USERNAME }} ${{ secrets.PASSWORD }}
+        njema date
+ 
+    - name: Read the current time
+      run: |
+        njema time 
+      run: |
+        njema.py ${{ secrets.USERNAME }} ${{ secrets.PASSWORD }}
       if: github.ref != 'refs/heads/master'
