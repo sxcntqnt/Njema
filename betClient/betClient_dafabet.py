@@ -7,7 +7,7 @@ from loguru import logger
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-from mind_your_stonks.bet_client import BetClient, BetStatus
+from mtuMishi import mtumishi, web_driver
 
 
 class SpreadsheetColumnLetter(Constant):
