@@ -22,6 +22,7 @@ jobs:
         sudo cp geckodriver/geckodriver /usr/local/bin
         geckodriver --version || exit 1
         pip install -r requirements.txt 
+
     - name: Install the repository
       run: |
         pip install .
